@@ -1,0 +1,27 @@
+[
+    {
+        "name": "HTML",
+        "bg": "",
+        "value": 75
+    }, 
+    {
+        "name": "CSS(SASS/LESS)",
+        "bg": "bg-success",
+        "value": 85
+    },
+    {
+        "name": "Javascript/jQuery",
+        "bg": "bg-danger",
+        "value": 70
+    },
+    {
+        "name": "Photoshop",
+        "bg": "bg-info",
+        "value": 65
+    },
+    {
+        "name": "Grunt/Gulp",
+        "bg": "bg-warning",
+        "value": 60
+    }
+]

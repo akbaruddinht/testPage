@@ -15,12 +15,27 @@ uiApp.config(function($routeProvider){
         controller: 'blogController',
         templateUrl: '../html/blog.html',
     })
+    
     .otherwise({
         redirectTo: '/'
     });
 
 })
 
-uiApp.controller('mainController', function($scope){
+uiApp.controller('mainController', function($scope, $http){
+    $scope.skills = [];
 
-})
+    $http.get('assests/skills.json')
+    .then(function(response){
+        $scope.skills = response.data;
+    })
+
+});
+
+uiApp.controller('projectController', function($scope){
+
+});
+
+uiApp.controller('blogController', function($scope){
+
+});
