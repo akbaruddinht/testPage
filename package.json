@@ -1,0 +1,19 @@
+{
+  "name": "akbaruddin.github.io",
+  "version": "1.0.0",
+  "description": "uilab.in",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/akbaruddin/akbaruddin.github.io.git"
+  },
+  "author": "akbaruddin <akbaruddin@live.in>",
+  "license": "MIT",
+  "scripts": {
+    "build-css": "node-sass -w sass -o css"
+  },
+  "bugs": {
+    "url": "https://github.com/akbaruddin/akbaruddin.github.io/issues"
+  },
+  "homepage": "https://github.com/akbaruddin/akbaruddin.github.io#readme"
+}
