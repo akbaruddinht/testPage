@@ -35,7 +35,7 @@ uiApp.controller('mainController', function($scope, $http){
     $scope.labels = ["AngularJs", "Reactjs/Redux"];
     $scope.data = [70, 30];
     $scope.colors = [ '#5cb85c', '#d9534f']
-    
+    // colors
 });
 
 uiApp.controller('projectController', function($scope){
