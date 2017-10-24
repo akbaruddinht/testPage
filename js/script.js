@@ -1,6 +1,6 @@
 var uiApp = angular.module('uiApp', ['ngRoute']);
 
-uiApp.config(function($routeProvider){
+uiApp.config(function($routeProvider, $locationProvider){
     $routeProvider
     // home page
     .when('/', {
@@ -19,6 +19,8 @@ uiApp.config(function($routeProvider){
     .otherwise({
         redirectTo: '/'
     });
+
+    $locationProvider.html5Mode(true);
 
 })
 
