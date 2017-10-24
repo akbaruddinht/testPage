@@ -1,4 +1,4 @@
-var uiApp = angular.module('uiApp', ['ngRoute']);
+var uiApp = angular.module('uiApp', ['ngRoute', "chart.js"]);
 
 uiApp.config(function($routeProvider, $locationProvider){
     $routeProvider
@@ -32,6 +32,10 @@ uiApp.controller('mainController', function($scope, $http){
         $scope.skills = response.data;
     })
 
+    $scope.labels = ["AngularJs", "Reactjs/Redux"];
+    $scope.data = [70, 30];
+    $scope.colors = [ '#5cb85c', '#d9534f']
+    
 });
 
 uiApp.controller('projectController', function($scope){
