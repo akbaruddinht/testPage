@@ -1,75 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-		<title>uilab.in - Front End Develop</title>
-		<meta name="description" content="UI/UX Design and Front End Develop with a passion for designing beautiful and functional user experiences and design into responsive HTML5/CSS3 with new challenges and innovations." />
-		<meta name="keywords" content="Website, UI, User Interface, UX, User Experience, HTML5, CSS3, Jquery, Angularjs, Reactjs, Redux, New Delhi, Delhi, Experience, Thinking, Wireframing, Prototyping"/>
-		<meta name="Author" content="uilab.in" />
-		
-		<!-- Bootstrap CSS -->
-		<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-		<link rel="stylesheet" href="css/main.css">
-		<base href="/">
-  </head>
-  <body ng-app="uiApp">
-    <header>
-    	<nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
-		  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-		    <span class="navbar-toggler-icon"></span>
-		  </button>
-		  <a class="navbar-brand" href="/">uilab.in</a>
-		  <!-- Navbar content -->
-		  <div class="collapse navbar-collapse" id="navbarText">
-		    <div class="navbar-nav">
-		      <a class="nav-item nav-link active" href="/projects">Projects <span class="sr-only">(current)</span></a>
-		      <a class="nav-item nav-link active" href="/blog">Blog </a>
-		    </div>
-		  </div>
-		</nav>
-		</header>
-		
-    <section ng-view></section>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>UI Lab</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <div class="header" >
+        <div class="container">
+            <div class="logo">
+            <a href="/"><span>uilab.in</span></a>
+            </div>
+            <nav class="nav clearfix">
+            <ul class="clearfix">
+                <li>
+                <a href="/">Home</a>
+                </li>
+                <li>
+                <a href="/blog">Blog</a>
+                </li>
+                <li>
+                <a href="/projects">Projects</a>
+                </li>
+                <li>
+                <a href="/about">About</a>
+                </li>
+            </ul>
+            </nav>
+        </div>
+    </div>
 
-    <div class="copyright bg-inverse">
-	  <div class="container-fuild footer-bottom">
-	    <div class="row">
-	    	<div class="col-md-6">
-		      <p>© 2016 - All Rights with uilab.in</p>
-		    </div>
-		    <div class="col-md-6">
-	           <div class="pull-right">
-           		 <ul class="footer-links clearfix">
-	                <li><a href="/projects">Projects</a></li>
-	                <li><a href="/blog">Blog</a></li>
-	            </ul>
-	           </div>
-	        </div>
-	    </div>
-	  </div>
-	</div>
-	
-   	<!-- Global Site Tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-106817086-1"></script>
-	<script>
-	  window.dataLayer = window.dataLayer || [];
-	  function gtag(){dataLayer.push(arguments)};
-	  gtag('js', new Date());
-
-	  gtag('config', 'UA-106817086-1');
-	</script>
-	  
-		<!-- jQuery first, then Tether, then Bootstrap JS. -->
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.6/angular.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.6/angular-route.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.min.js"></script>
-		<script src="https://cdn.jsdelivr.net/angular.chartjs/latest/angular-chart.min.js"></script>
-		<script src="js/script.js"></script>
-  </body>
+    <section>
+        <main>
+            <header class="text-center">
+                <h3 class="page-title">Design is a journey of</h3>
+                <h3 class="page-title blue">Simple, Powerful ways & Easy to Love</h3>
+            </header>
+        </main>
+    </section>
+    
+    <script src="scripts/home.js"></script>
+</body>
 </html>
