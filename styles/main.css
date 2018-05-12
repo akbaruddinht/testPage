@@ -131,3 +131,7 @@ main {
 .page-title.blue {
     color: #38b7ea;
 }
+
+.mt-lg-40 {
+    margin-top: 40px;
+}
