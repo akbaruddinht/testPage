@@ -1,0 +1,49 @@
+body {
+    background-color: #fdfeff;
+}
+
+.card-row {
+    margin-left: -15px;
+    margin-right: -15px;
+}
+
+.card-row .card {
+    float: left;
+    width: 200px;
+    height: 200px;
+    border-radius: 5px;
+    margin: 15px;
+    text-decoration: none;
+    text-align: center;
+}
+
+.card.pink {
+    background-color: #f4e9f7;
+}
+.card.blue {
+    background-color: #dfefff;
+}
+.card.green {
+    background-color: #e9f7f7;
+}
+.card.yellow {
+    background-color: #f8efea;
+}
+.card.purpul {
+    background-color: #e9ebf7;
+}
+.card.orange {
+    background-color: #f8e9ec;
+}
+
+.card-title {
+    font-size: 50px;
+    margin-top: 60px;
+}
+
+.card-para {
+    opacity: .4;
+    font-weight: 100;
+    font-size: 12px;
+    margin-top: 10px;
+}

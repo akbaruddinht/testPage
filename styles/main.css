@@ -113,9 +113,10 @@ main {
     border-radius: 4px; 
 }
 
-.header a:hover,
-.header a:focus,
-.header a:active {
+a,
+a:hover,
+a:focus,
+a:active {
     color: #000;
 }
 
