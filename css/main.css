@@ -1,2 +1,40 @@
-.copyright{min-height:40px}.copyright p{text-align:left;color:#FFF;padding:10px 0;margin-bottom:0}.footer-bottom{padding:0 15px}.footer-bottom .footer-links{float:right;margin:0;padding:0;list-style-type:none}.footer-bottom li{float:left;line-height:44px}.footer-bottom li:after{content:"/";color:#FFF;margin-right:8px;margin-left:8px}.footer-bottom li a{color:#FFF;font-size:14px}
-/*# sourceMappingURL=main.css.map */
+.copyright {
+  min-height: 40px; }
+  .copyright p {
+    text-align: left;
+    color: #FFF;
+    padding: 10px 0;
+    margin-bottom: 0; }
+
+.footer-bottom {
+  padding: 0 15px; }
+  .footer-bottom .footer-links {
+    float: right;
+    margin: 0;
+    padding: 0;
+    list-style-type: none; }
+  .footer-bottom li {
+    float: left;
+    line-height: 44px; }
+    .footer-bottom li:after {
+      content: "/";
+      color: #FFF;
+      margin-left: 8px;
+      margin-right: 8px; }
+  .footer-bottom a {
+    color: #FFF;
+    font-size: 14px; }
+
+.bg__color--lightgray {
+  background-color: #dedecd;
+  min-height: 200px; }
+
+.banner__head {
+  font-family: 'Lobster', cursive;
+  font-size: 50px; }
+  @media (min-width: 768px) {
+    .banner__head {
+      font-size: 90px; } }
+
+.banner__para {
+  font-size: 20px; }

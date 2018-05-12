@@ -1,7 +1,5 @@
-# testPage
-
-
-## SCSS Compile
+## SASS Compile
 ```
-sass --watch scss:css --style compressed
+-- node-sass
+$ npm run build-css
 ```
