@@ -44,7 +44,7 @@
                 <h3 class="page-title">Design is a journey of</h3>
                 <h3 class="page-title blue">Simple, Powerful ways & Easy to Love</h3>
             </header>
-            <button onclick="googleLogin();">Google Login</button>
+            <div class="g-signin2" data-onsuccess="onSignIn"></div>
         </main>
     </section>
     <!-- Global Site Tag (gtag.js) - Google Analytics -->
@@ -58,6 +58,14 @@
     <script src="scripts/home.js"></script>
     <script src="https://apis.google.com/js/platform.js?onload=onLoadCallback" async defer></script>
     <script type="text/javascript">
+        function onSignIn(googleUser) {
+          var profile = googleUser.getBasicProfile();
+          console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+          console.log('Name: ' + profile.getName());
+          console.log('Image URL: ' + profile.getImageUrl());
+          console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+        }
+
         function googleLogin() {
                 var myParams = {
                 'clientid': '577448346659-bmo61g5qduvm0vhkeq1b4d1gf1t0qbdl.apps.googleusercontent.com',
