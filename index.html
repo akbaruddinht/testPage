@@ -58,11 +58,7 @@
     <script src="scripts/home.js"></script>
     <script src="https://apis.google.com/js/platform.js?onload=onLoadCallback" async defer></script>
     <script type="text/javascript">
-        window.onLoadCallback = function(){
-            gapi.client.setApiKey('NXdrZ1kQ17wnkSrMFgzCwES3');
-            gapi.client.load('plus', 'v1', function() {});
-
-            function googleLogin() {
+        function googleLogin() {
                 var myParams = {
                 'clientid': '577448346659-bmo61g5qduvm0vhkeq1b4d1gf1t0qbdl.apps.googleusercontent.com',
                 'cookiepolicy': 'single_host_origin',
@@ -85,6 +81,9 @@
                 debugger;
               });
             }
+
+        window.onLoadCallback = function(){
+            gapi.client.load('plus', 'v1', function() {});
         }
     </script>
 </body>
