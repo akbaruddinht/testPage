@@ -56,33 +56,35 @@
 	  gtag('config', 'UA-106817086-1');
 	</script>
     <script src="scripts/home.js"></script>
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="https://apis.google.com/js/platform.js?onload=onLoadCallback" async defer></script>
     <script type="text/javascript">
-        gapi.client.setApiKey('NXdrZ1kQ17wnkSrMFgzCwES3');
-        gapi.client.load('plus', 'v1', function() {});
+        window.onLoadCallback = function(){
+            gapi.client.setApiKey('NXdrZ1kQ17wnkSrMFgzCwES3');
+            gapi.client.load('plus', 'v1', function() {});
 
-        function googleLogin() {
-            var myParams = {
-            'clientid': '577448346659-bmo61g5qduvm0vhkeq1b4d1gf1t0qbdl.apps.googleusercontent.com',
-            'cookiepolicy': 'single_host_origin',
-            'accesstype': 'offline',
-            'callback': 'loginCallbackNSFW',
-            // 'immediate':'false',
-            // 'scope': 'https://www.googleapis.com/auth/plus.login  https://www.googleapis.com/auth/plus.profile.emails.read https://www.googleapis.com/auth/plus.me https://www.googleapis.com/plus/v1/people/me'
-            'scope': 'https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/plus.me https://www.googleapis.com/auth/plus.login'
-          };
-          gapi.auth.signIn(myParams);
-        }
+            function googleLogin() {
+                var myParams = {
+                'clientid': '577448346659-bmo61g5qduvm0vhkeq1b4d1gf1t0qbdl.apps.googleusercontent.com',
+                'cookiepolicy': 'single_host_origin',
+                'accesstype': 'offline',
+                'callback': 'loginCallbackNSFW',
+                // 'immediate':'false',
+                // 'scope': 'https://www.googleapis.com/auth/plus.login  https://www.googleapis.com/auth/plus.profile.emails.read https://www.googleapis.com/auth/plus.me https://www.googleapis.com/plus/v1/people/me'
+                'scope': 'https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/plus.me https://www.googleapis.com/auth/plus.login'
+              };
+              gapi.auth.signIn(myParams);
+            }
 
-        var gcode = '';
-        function loginCallbackNSFW(result) {
-          console.log(result)
-          gcode = result.code;
-          gapi.client.plus.people.get({
-            'userId': 'me'
-          }).then(function(res) {
-            debugger;
-          });
+            var gcode = '';
+            function loginCallbackNSFW(result) {
+              console.log(result)
+              gcode = result.code;
+              gapi.client.plus.people.get({
+                'userId': 'me'
+              }).then(function(res) {
+                debugger;
+              });
+            }
         }
     </script>
 </body>
