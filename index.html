@@ -58,6 +58,9 @@
     <script src="scripts/home.js"></script>
     <script src="https://apis.google.com/js/platform.js" async defer></script>
     <script type="text/javascript">
+        gapi.client.setApiKey('NXdrZ1kQ17wnkSrMFgzCwES3');
+        gapi.client.load('plus', 'v1', function() {});
+
         function googleLogin() {
             var myParams = {
             'clientid': '577448346659-bmo61g5qduvm0vhkeq1b4d1gf1t0qbdl.apps.googleusercontent.com',
