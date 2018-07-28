@@ -44,13 +44,6 @@
                 <h3 class="page-title">Design is a journey of</h3>
                 <h3 class="page-title blue">Simple, Powerful ways & Easy to Love</h3>
             </header>
-            <button class="g-signin"
-                  data-scope="https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/plus.me https://www.googleapis.com/auth/plus.login"
-                  data-clientid="577448346659-bmo61g5qduvm0vhkeq1b4d1gf1t0qbdl.apps.googleusercontent.com"
-                  data-callback="onSignInCallback"
-                  data-theme="dark"
-                  data-cookiepolicy="single_host_origin">
-              </button>
         </main>
     </section>
     <!-- Global Site Tag (gtag.js) - Google Analytics -->
@@ -62,21 +55,5 @@
 	  gtag('config', 'UA-106817086-1');
 	</script>
     <script src="scripts/home.js"></script>
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
-    <script src = "https://plus.google.com/js/client:platform.js" async defer></script>
-    <script type="text/javascript">
-
-        function onSignInCallback(resp) {
-        gapi.client.load('plus', 'v1', apiClientLoaded);
-      }
-
-        function apiClientLoaded() {
-    gapi.client.plus.people.get({userId: 'me'}).execute(handleEmailResponse);
-  }
-  function handleEmailResponse(resp) {
-    console.log(resp)
-    debugger;
-  }
-    </script>
 </body>
 </html>
