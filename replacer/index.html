@@ -1,0 +1,117 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>uilab | replacer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/css/foundation.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/motion-ui/1.2.3/motion-ui.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/css/foundation-prototype.min.css">
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css' rel='stylesheet' type='text/css'>
+  </head>
+  <body>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106817086-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments)};
+      gtag('js', new Date());
+      gtag('config', 'UA-106817086-1');
+    </script>
+    <div class="grid-x align-center">
+      <div class="cell medium-12">
+        <div class="callout">
+          <ul class="menu simple">
+            <li><a href="/">Home</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    <form>
+      <div class="grid-container">
+        <div class="grid-x grid-padding-x">
+          <div class="medium-12 cell">
+            <label>Enter Value
+              <textarea rows="5" id="userValue"></textarea>
+            </label>
+          </div>
+          <div class="medium-2 cell">
+            <input id="at" checked type="checkbox" value="[at]"><label for="at">at to @</label>
+            <br>
+            <input id="dot" checked type="checkbox" value="[dot]"><label for="dot">dot to .</label>
+          </div>
+          <div class="medium-4 cell">
+            <label>Other value 
+              <input type="text" placeholder="from" id="from">
+            </label>
+          </div>
+          <div class="medium-4 cell">
+            <label>replace with
+              <input type="text" placeholder="to" id="to">
+            </label>
+          </div>
+          <div class="medium-2 cell">
+            <br>
+            <input id="replaceall" type="checkbox"><label for="">replace all</label>
+          </div>
+          <div class="medium-12 cell">
+            <button type="button" class="button" id="replacer">Replace</button>
+            <button type="button" class="success button" id="replacerAndCopy">Replace &amp; Copy</button>
+          </div>
+          <div class="medium-12 cell">
+            <label>Output
+              <textarea rows="5" id="outputValue"></textarea>
+            </label>
+          </div>
+        </div>
+      </div>
+    </form>
+      <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/js/foundation.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/motion-ui/1.2.3/motion-ui.min.js"></script>
+      <script>
+      $(document).foundation();
+      $(document).ready(function(){
+        function valuereplace(callback) {
+          var userValue = $('#userValue').val();
+
+          if ($('#at').is(':checked')) {
+            userValue = userValue.replace(/\[at\]/g, '@');
+          }
+
+          if ($('#dot').is(':checked')) {
+            userValue = userValue.replace(/\[dot\]/g, '.');
+          }
+
+          var $from = $('#from').val();
+          var $to = $('#to').val()
+          if ($from && $to) {
+            var innerFrom = $from;
+            var innerTo = $to;
+            if ($('#replaceall').is(':checked')) {
+              innerFrom = new RegExp($from, 'g');
+            }
+            userValue = userValue.replace(innerFrom, innerTo);
+          }
+
+          $('#outputValue').val(userValue);
+
+          if (typeof callback === "function") {
+            callback();
+          }
+        }
+
+        $('#replacer').on('click', function() {
+          valuereplace();
+        });
+
+        $('#replacerAndCopy').on('click', function() {
+          valuereplace(function() {
+            $('#outputValue')[0].select();
+            document.execCommand('copy');
+          });
+        });
+      });
+      </script>
+    </body>
+  </html>
