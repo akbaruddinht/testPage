@@ -136,3 +136,18 @@ a:active {
 .mt-lg-40 {
     margin-top: 40px;
 }
+
+.mt-lg-100 {
+    margin-top: 100px;
+}
+
+.col-6 {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.title h2 {
+    margin: 20px 0 10px;
+    font-size: 24px;
+}
