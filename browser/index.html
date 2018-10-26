@@ -44,11 +44,13 @@
         </div>
         <div id="userAgent">
         </div>
+        <div id="finallist"></div>
         <script type="text/javascript">
           var ua= navigator.userAgent,
           browser = ua.match(/(opera|ucbrowser|chrome|safari|firefox|msie|trident(?=\/))\/?\s*(\d+)/i) || [];
           document.getElementById('browserShow').innerHTML = browser[1];
           document.getElementById('userAgent').innerHTML = ua;
+          document.getElementById('finallist').innerHTML = browser.toLocaleString();
         </script>
 
       </main>
