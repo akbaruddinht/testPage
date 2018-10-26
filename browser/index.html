@@ -12,6 +12,14 @@
     <meta name="twitter:title" content="twitter card" />
     <meta name="google-signin-client_id" content="577448346659-bmo61g5qduvm0vhkeq1b4d1gf1t0qbdl.apps.googleusercontent.com">
     <link rel="stylesheet" href="/styles/main.css?v=0.0.2">
+    <style type="text/css">
+      .browser {max-width: 300px; margin: 5% auto; }
+      .browser:after {content: ''; clear: both; display: block; height: 0; }
+      .browser-type div, .browser-version div {font-size: 32px; font-weight: bold; margin-top: 10px; }
+      .browser-type {float: left; }
+      .browser-version {float: right; text-align: right; }
+      #userAgent {font-size: 10px; position: absolute; bottom: 10px; left: 0; right: 0; width: 100%; text-align: center;}
+    </style>
 </head>
 <body>
     <div class="header" >
@@ -40,14 +48,37 @@
 
     <section>
       <main>
-        <div id="browserShow">
+        <div class="browser">
+          <div class="browser-type">
+            <label>Browser</label>
+            <div id="browserType"></div>
+          </div>
+          <div class="browser-version">
+            <label>Version</label>
+            <div id="browserVersion"></div>
+          </div>
         </div>
-        <div id="userAgent">
-        </div>
+        <div id="userAgent"></div>
         <script type="text/javascript">
-          var browser=function(){var r,e=navigator.userAgent,a=e.match(/(ucbrowser(?=\/))\/?\s*(\d+)/i)||[];return!a.toString()&&(a=e.match(/(opera|chrome|safari|firefox|msie|trident(?=\/))\/?\s*(\d+)/i)||[]),/trident/i.test(a[1])?"IE "+((r=/\brv[ :]+(\d+)/g.exec(e)||[])[1]||""):"Chrome"===a[1]&&null!=(r=e.match(/\b(OPR|Edge)\/(\d+)/))?r.slice(1).join(" ").replace("OPR","Opera"):(a=a[2]?[a[1],a[2]]:[navigator.appName,navigator.appVersion,"-?"],null!=(r=e.match(/version\/(\d+)/i))&&a.splice(1,1,r[1]),a)}();
-          document.getElementById('browserShow').innerHTML = "Browser: " + browser[0];
-          document.getElementById('userAgent').innerHTML = "Version: " + browser[1];
+          var browser = (function(){
+    var ua= navigator.userAgent, tem,
+    M = ua.match(/(ucbrowser(?=\/))\/?\s*(\d+)/i) || [];
+    !M.toString() && (M = ua.match(/(opera|chrome|safari|firefox|msie|trident(?=\/))\/?\s*(\d+)/i) || []);
+    if(/trident/i.test(M[1])){
+      tem=  /\brv[ :]+(\d+)/g.exec(ua) || [];
+      return 'IE '+(tem[1] || '');
+    }
+    if(M[1]=== 'Chrome'){
+      tem= ua.match(/\b(OPR|Edge)\/(\d+)/);
+      if(tem!= null) return tem.slice(1).join(' ').replace('OPR', 'Opera');
+    }
+    M= M[2]? [M[1], M[2]]: [navigator.appName, navigator.appVersion, '-?'];
+    //if((tem= ua.match(/version\/(\d+)/i))!= null) M.splice(1, 1, tem[1]);
+    return M;
+  })();
+          document.getElementById('browserType').innerHTML = browser[0];
+          document.getElementById('browserVersion').innerHTML = browser[1];
+          document.getElementById('userAgent').innerHTML = navigator.userAgent;
         </script>
 
       </main>
