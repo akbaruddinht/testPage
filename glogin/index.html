@@ -53,6 +53,7 @@
 	  gtag('config', 'UA-106817086-1');
 	</script>
   <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <script src="https://apis.google.com/js/api.js"></script>
   <script type="text/javascript">
     function onSignIn(googleUser) {
       var profile = googleUser.getBasicProfile();
@@ -61,6 +62,30 @@
       console.log('Image URL: ' + profile.getImageUrl());
       console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
     }
+
+    function start() {
+      // 2. Initialize the JavaScript client library.
+      gapi.client.init({
+        'apiKey': '2NLhkkjJoEVTiq35tWBCpbcN',
+        // Your API key will be automatically added to the Discovery Document URLs.
+        'discoveryDocs': ['https://people.googleapis.com/$discovery/rest'],
+        // clientId and scope are optional if auth is not required.
+        'clientId': '577448346659-husub1ru2agkr4ovihfiq0e62qarjmtb.apps.googleusercontent.com',
+        'scope': 'profile',
+      }).then(function() {
+        // 3. Initialize and make the API request.
+        return gapi.client.people.people.get({
+          'resourceName': 'people/me',
+          'requestMask.includeField': 'person.names'
+        });
+      }).then(function(response) {
+        console.log(response.result);
+      }, function(reason) {
+        console.log('Error: ' + reason.result.error.message);
+      });
+    };
+    // 1. Load the JavaScript client library.
+    gapi.load('client', start);
   </script>
 </body>
 </html>
