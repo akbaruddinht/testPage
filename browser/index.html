@@ -12,14 +12,13 @@
     <meta name="twitter:title" content="twitter card" />
     <meta name="google-signin-client_id" content="577448346659-bmo61g5qduvm0vhkeq1b4d1gf1t0qbdl.apps.googleusercontent.com">
     <link rel="stylesheet" href="/styles/main.css?v=0.0.3">
-    <link href="https://fonts.googleapis.com/css?family=Mali:400,500" rel="stylesheet">
     <style type="text/css">
-      .browser {max-width: 300px; margin: 5% auto; font-family: 'Mali', cursive;}
+      .browser {max-width: 300px; margin: 5% auto;}
       .browser:after {content: ''; clear: both; display: block; height: 0; }
       .browser-type div, .browser-version div {font-size: 32px; font-weight: bold; margin-top: 10px; }
       .browser-type {float: left; }
       .browser-version {float: right; text-align: right; }
-      #userAgent {font-size: 10px; position: absolute; bottom: 10px; left: 0; right: 0; width: 100%; text-align: center;}
+      #userAgent {font-size: 10px; position: absolute; bottom: 0; left: 0; right: 0; width: 96%; text-align: center; padding: 10px 2%; background: #fafafa}
     </style>
 </head>
 <body>
@@ -63,7 +62,7 @@
         <script type="text/javascript">
           var browser = (function(){
     var ua= navigator.userAgent, tem,
-    M = ua.match(/(ucbrowser|opera mini(?=\/))\/?\s*(\d+)/i) || [];
+    M = ua.match(/(ucbrowser|opera mini|miuibrowser(?=\/))\/?\s*(\d+)/i) || [];
     !M.toString() && (M = ua.match(/(opera|chrome|safari|firefox|msie|trident(?=\/))\/?\s*(\d+)/i) || []);
     if(/trident/i.test(M[1])){
       tem=  /\brv[ :]+(\d+)/g.exec(ua) || [];
