@@ -44,13 +44,10 @@
         </div>
         <div id="userAgent">
         </div>
-        <div id="finallist"></div>
         <script type="text/javascript">
-          var ua= navigator.userAgent,
-          browser = ua.match(/(opera|ucbrowser|chrome|safari|firefox|msie|trident(?=\/))\/?\s*(\d+)/i) || [];
-          document.getElementById('browserShow').innerHTML = browser[1];
-          document.getElementById('userAgent').innerHTML = ua;
-          document.getElementById('finallist').innerHTML = browser.toLocaleString();
+          var browser=function(){var r,e=navigator.userAgent,a=e.match(/(ucbrowser(?=\/))\/?\s*(\d+)/i)||[];return!a.toString()&&(a=e.match(/(opera|chrome|safari|firefox|msie|trident(?=\/))\/?\s*(\d+)/i)||[]),/trident/i.test(a[1])?"IE "+((r=/\brv[ :]+(\d+)/g.exec(e)||[])[1]||""):"Chrome"===a[1]&&null!=(r=e.match(/\b(OPR|Edge)\/(\d+)/))?r.slice(1).join(" ").replace("OPR","Opera"):(a=a[2]?[a[1],a[2]]:[navigator.appName,navigator.appVersion,"-?"],null!=(r=e.match(/version\/(\d+)/i))&&a.splice(1,1,r[1]),a)}();
+          document.getElementById('browserShow').innerHTML = "Browser: " + browser[0];
+          document.getElementById('userAgent').innerHTML = "Version: " + browser[1];
         </script>
 
       </main>
