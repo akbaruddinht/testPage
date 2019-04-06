@@ -1,66 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>UI Lab :: Browser</title>
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@Uilab" />
-    <meta name="twitter:creator" content="@Uilab" />
-    <meta name="twitter:description" content="twitter card" />
-    <meta name="twitter:title" content="twitter card" />
-    <meta name="google-signin-client_id" content="577448346659-bmo61g5qduvm0vhkeq1b4d1gf1t0qbdl.apps.googleusercontent.com">
-    <link rel="stylesheet" href="/styles/main.css?v=0.0.3">
-    <style type="text/css">
-      .browser {max-width: 300px; margin: 5% auto;}
-      .browser:after {content: ''; clear: both; display: block; height: 0; }
-      .browser-type div, .browser-version div {font-size: 32px; font-weight: bold; margin-top: 10px; }
-      .browser-type {float: left; }
-      .browser-version {float: right; text-align: right; }
-      #userAgent {font-size: 10px; position: absolute; bottom: 0; left: 0; right: 0; width: 96%; text-align: center; padding: 10px 2%; background: #fafafa}
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>UI Lab :: Browser</title>
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@Uilab" />
+  <meta name="twitter:creator" content="@Uilab" />
+  <meta name="twitter:description" content="twitter card" />
+  <meta name="twitter:title" content="twitter card" />
+  <meta name="google-signin-client_id" content="577448346659-bmo61g5qduvm0vhkeq1b4d1gf1t0qbdl.apps.googleusercontent.com">
+  <link rel="stylesheet" href="/styles/main.css?v=0.0.3">
+  <style type="text/css">
+  .browser {max-width: 300px; margin: 5% auto;}
+  .browser:after {content: ''; clear: both; display: block; height: 0; }
+  .browser-type div, .browser-version div {font-size: 32px; font-weight: bold; margin-top: 10px; }
+  .browser-type {float: left; }
+  .browser-version {float: right; text-align: right; }
+  #userAgent {font-size: 10px; position: absolute; bottom: 0; left: 0; right: 0; width: 96%; text-align: center; padding: 10px 2%; background: #fafafa}
+  </style>
 </head>
 <body>
-    <div class="header" >
-        <div class="container">
-            <div class="logo">
-            <a href="/"><span>uilab.in</span></a>
-            </div>
-            <nav class="nav clearfix">
-            <ul class="clearfix">
-                <li>
-                <a href="/">Home</a>
-                </li>
-                <li>
-                <a href="/blog">Blog</a>
-                </li>
-                <li>
-                <a href="/projects">Projects</a>
-                </li>
-                <li>
-                <a href="/about">About</a>
-                </li>
-            </ul>
-            </nav>
-        </div>
+  <!-- #header -->
+  <div class="header" >
+    <div class="container">
+      <div class="logo">
+        <a href="/"><span>uilab.in</span></a>
+      </div>
+      <nav class="nav clearfix">
+        <ul class="clearfix">
+          <li><a href="/">Home</a></li>
+          <li><a href="/blog">Blog</a></li>
+          <li><a href="/projects">Projects</a></li>
+          <li><a href="/about">About</a></li>
+        </ul>
+      </nav>
     </div>
+  </div>
+  <!-- /header -->
 
-    <section>
-      <main>
-        <div class="browser">
-          <div class="browser-type">
-            <label>Browser</label>
-            <div id="browserType"></div>
-          </div>
-          <div class="browser-version">
-            <label>Version</label>
-            <div id="browserVersion"></div>
-          </div>
+  <!-- #section -->
+  <section>
+    <main>
+      <div class="browser">
+        <div class="browser-type">
+          <label>Browser</label>
+          <div id="browserType"></div>
         </div>
-        <div id="userAgent"></div>
-        <script type="text/javascript">
-          var browser = (function(){
+        <div class="browser-version">
+          <label>Version</label>
+          <div id="browserVersion"></div>
+        </div>
+      </div>
+      <div id="userAgent"></div>
+    </main>
+  </section>
+  <!-- /section -->
+
+  <script type="text/javascript">
+  var browser = (function() {
     var ua= navigator.userAgent, tem,
     M = ua.match(/(ucbrowser|opera mini|miuibrowser(?=\/))\/?\s*(\d+)/i) || [];
     !M.toString() && (M = ua.match(/(opera|chrome|safari|firefox|msie|trident(?=\/))\/?\s*(\d+)/i) || []);
@@ -78,20 +77,17 @@
     }
     return M;
   })();
-          document.getElementById('browserType').innerHTML = browser[0];
-          document.getElementById('browserVersion').innerHTML = browser[1];
-          document.getElementById('userAgent').innerHTML = navigator.userAgent;
-        </script>
-
-      </main>
-    </section>
-    <!-- Global Site Tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-106817086-1"></script>
-	<script>
-	  window.dataLayer = window.dataLayer || [];
-	  function gtag(){dataLayer.push(arguments)};
-	  gtag('js', new Date());
-	  gtag('config', 'UA-106817086-1');
-	</script>
+  document.getElementById('browserType').innerHTML = browser[0];
+  document.getElementById('browserVersion').innerHTML = browser[1];
+  document.getElementById('userAgent').innerHTML = navigator.userAgent;
+  </script>
+  <!-- Global Site Tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106817086-1"></script>
+  <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments)};
+  gtag('js', new Date());
+  gtag('config', 'UA-106817086-1');
+  </script>
 </body>
 </html>
