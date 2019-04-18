@@ -67,7 +67,7 @@
       tem=  /\brv[ :]+(\d+)/g.exec(ua) || [];
       return 'IE '+(tem[1] || '');
     }
-    if(M[1]=== 'Chrome'){
+    if(M[0]=== 'Chrome'){
       tem= ua.match(/\b(OPR|Edge)\/(\d+)/);
       if(tem!= null) return tem.slice(1).join(' ').replace('OPR', 'Opera');
     }
