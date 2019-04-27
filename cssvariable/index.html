@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CSS Variable Test</title>
+</head>
+<style type="text/css">
+  :root {
+    --test-color: black;
+  }
+</style>
+<script type="text/javascript">
+  var cssVariable = function() {
+    try {
+      var color = getComputedStyle(document.documentElement).getPropertyValue("--test-color");
+      if (color === "black") {
+        return true;
+      }
+    } catch () {
+      return false
+    }
+  }
+
+  document.querySelector("#test").innerHTML = cssVariable();
+</script>
+<body>
+  <div>
+    Support
+    <strong id="test"></strong>
+  </div>
+</body>
+</html>
