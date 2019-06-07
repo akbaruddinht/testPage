@@ -5,70 +5,64 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Flip Card in CSS</title>
-  <style>
-    body {
-      background: #f17563;
-      font-size: 50px;
-      color: #222;
-    }
-    
-    label {
-      -webkit-perspective: 1000px;
-      perspective: 1000px;
-      -webkit-transform-style: preserve-3d;
-      transform-style: preserve-3d;
-      display: block;
-      width: 300px;
-      height: 200px;
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      -webkit-transform: translate(-50%, -50%);
-      transform: translate(-50%, -50%);
-      cursor: pointer;
-    }
-    
-    .card {
-      position: relative;
-      height: 100%;
-      width: 100%;
-      -webkit-transform-style: preserve-3d;
-      transform-style: preserve-3d;
-      -webkit-transition: all 600ms;
-      transition: all 600ms;
-      z-index: 20;
-    }
-    
-    .card div {
-      position: absolute;
-      height: 100%;
-      width: 100%;
-      background: #fff;
-      text-align: center;
-      line-height: 200px;
-      -webkit-backface-visibility: hidden;
-      backface-visibility: hidden;
-      border-radius: 2px;
-    }
-    
-    .card .back {
-      background: #222;
-      color: #fff;
-      -webkit-transform: rotateY(180deg);
-      transform: rotateY(180deg);
-    }
-    
-    input {
-      display: none;
-    }
-    
-    :checked + .card {
-      transform: rotateY(180deg);
-      -webkit-transform: rotateY(180deg);
-    }
+  <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+  <style id="runCSS">
+  label {
+    color: #222;
+    font-size: 50px;
+    -webkit-perspective: 1000px;
+    perspective: 1000px;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    display: block;
+    width: 300px;
+    height: 200px;
+    margin: 50px auto;
+    cursor: pointer;
+  }
+  
+  .card {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transition: all 600ms;
+    transition: all 600ms;
+    z-index: 20;
+  }
+  
+  .card div {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: #fff;
+    text-align: center;
+    line-height: 200px;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 2px;
+  }
+  
+  .card .back {
+    background: #222;
+    color: #fff;
+    -webkit-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+  }
+  
+  input {
+    display: none;
+  }
+  
+  :checked + .card {
+    transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg);
+  }
   </style>
 </head>
 <body>
+  <div id="runHTML">
   <label>
     <input type="checkbox" />
     <div class="card">
@@ -76,5 +70,42 @@
         <div class="back">Back</div>
     </div>
   </label>
+  </div>
+
+  <h2 class="header">HTML</h2>
+  <div id="codeHTML" style="max-width: 500px; width: 100%; margin: 0 auto;">
+  </div>
+
+  <h2 class="header">CSS</h2>
+  <div id="codeCSS" style="max-width: 500px; width: 100%; margin: 0 auto;">
+  </div>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/codemirror@5.47.0/lib/codemirror.min.css">
+  <style>
+  .CodeMirror {border: 1px solid black; font-size:13px; height: auto; margin-bottom: 30px;}
+  body { font-family: 'Roboto'; background: #f17563; }
+  .header { max-width: 500px; width: 100%; margin: 0 auto 10px; }
+  #runHTML {margin-bottom: 200px;}
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/codemirror@5.47.0/lib/codemirror.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/codemirror@5.47.0/mode/xml/xml.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/codemirror@5.47.0/mode/css/css.js"></script>
+  <script>
+  var myCodeMirrorHTML = CodeMirror(document.querySelector("#codeHTML"), {
+      mode: "text/html",
+      extraKeys: {"Ctrl-Space": "autocomplete"},
+      value: document.getElementById("runHTML").innerHTML,
+      lineNumbers: true,
+      styleActiveLine: true,
+  });
+  var myCodeMirrorCSS = CodeMirror(document.querySelector("#codeCSS"), {
+    mode: "text/css",
+    extraKeys: {"Ctrl-Space": "autocomplete"},
+    value: document.getElementById("runCSS").innerHTML,
+    lineNumbers: true,
+    matchBrackets: true,
+    styleActiveLine: true,
+  });
+  </script>
 </body>
 </html>
