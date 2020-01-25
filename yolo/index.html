@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Yolo login</title>
+</head>
+<body>
+  <script src="https://smartlock.google.com/client"></script>
+  <script>
+    const PUBLIC_CLIENT_ID = '577448346659-husub1ru2agkr4ovihfiq0e62qarjmtb.apps.googleusercontent.com';
+
+    try {
+      openyolo.setRenderMode('navPopout');
+      googleyolo.hint({
+        supportedAuthMethods: [
+          "https://accounts.google.com",
+          "googleyolo://id-and-password"
+        ],
+        supportedIdTokenProviders: [{
+          uri: "https://accounts.google.com",
+          clientId: PUBLIC_CLIENT_ID
+        }],
+        context: "signUp"
+      }).then(function(credential) {
+        // process
+        console.log('process');
+        console.log(credential);
+      }, function(error) {
+        console.log('other');
+        console.log(error);
+      })
+    } catch (e) {
+      console.log(e);
+    }
+  </script>
+</body>
+</html>
