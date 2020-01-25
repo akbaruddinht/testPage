@@ -29,6 +29,23 @@
       }, function(error) {
         console.log('other');
         console.log(error);
+        googleyolo.hint({
+          supportedAuthMethods: ["https://accounts.google.com"],
+          supportedIdTokenProviders: [{
+              uri: "https://accounts.google.com",
+              clientId: PUBLIC_CLIENT_ID
+          }]
+        }).then(function (credential) {
+          console.log("hint worked");
+          console.log(credential);
+          if (credential.idToken) {
+              // Send the token to your auth backend.
+              console.log(credential.idToken);
+          }
+      }, function (error) {
+        console.log("htpppppppp")
+        console.log(error);
+      });
       })
     } catch (e) {
       console.log(e);
