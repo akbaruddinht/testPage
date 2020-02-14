@@ -149,14 +149,14 @@ var data = {
     },
     {
       "emoji": "⬇️",
-      "entity": "⬇️",
+      "entity": "&#xe233;",
       "code": ":arrow_down:",
       "description": "Downgrading dependencies.",
       "name": "arrow-down"
     },
     {
       "emoji": "⬆️",
-      "entity": "⬆️",
+      "entity": "&#xe232;",
       "code": ":arrow_up:",
       "description": "Upgrading dependencies.",
       "name": "arrow-up"
@@ -177,6 +177,7 @@ var data = {
     },
     {
       "emoji": "📈",
+      "entity": "&#x1f4c8;",
       "code": ":chart_with_upwards_trend:",
       "description": "Adding analytics or tracking code.",
       "name": "chart-with-upwards-trend"

@@ -1,13 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Git emojis</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+  <link rel="manifest" href="favicon/site.webmanifest">
+  <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #f2f6ff;
+      font-family: 'Nunito', sans-serif;
+    }
+
+    .section {
+      padding: 10px;
+    }
+
+    .lists {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .card,
+    .command {
+      border-radius: 10px;
+      box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0,0,0,.12);
+      margin: 10px;
+      padding: 15px;
+    }
+
+    .command {
+      background-color: #000;
+      color: #fff;
+      font-size: 36px;
+    }
+
+    .card {
+      align-items: center;
+      background-color: #fff;
+      display: flex;
+      flex: 0 0 calc(100% - 20px);
+    }
+
+    .card-emo {
+      font-size: 80px;
+      padding-right: 15px;
+    }
+
+    .card-para:not(:first-child) {
+      margin-top: 5px;
+    }
+
+    .card-para .title {
+      color: #cecfdd;
+      display: block;
+      font-size: 12px;
+    }
+
+    .card-para .code {
+      color: #121a60;
+      display: block;
+      font-size: 16px;
+    }
+
+    @media (min-width: 600px) {
+      .card {
+        flex: 0 0 calc(50% - 20px);
+      }
+    }
+
+    @media (min-width: 992px) {
+      .card {
+        flex: 0 0 calc(33% - 20px);
+      }
+    }
+
+    @media (min-width: 1200px) {
+      .card {
+        flex: 0 0 calc(25% - 20px);
+      }
+    }
+  </style>
 </head>
 <body>
+  <section class="section">
+    <div class="command">> <span id="git"></span></div>
     <div class="lists"></div>
-    <script src="gitmojis.js"></script>
-    <script src="scripts.js"></script>
+  </section>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+  <script src="gitmojis.js"></script>
+  <script src="scripts.js"></script>
 </body>
 </html>
