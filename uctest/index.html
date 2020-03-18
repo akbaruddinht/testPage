@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button
+      onclick="downloadImage(event)"
+      class="laugh-btn laugh-btn-download"
+      aria-label="download meme"
+      data-image="https://s3.scoopwhoop.com/anj2/5e172cb4f010186e3c506f4d/248ce974-2699-403b-a7d8-cd1cc6e6c0a4.jpg"
+    >
+      <svg width="26" height="24" fill="none">
+        <path
+          fill="#FF2272"
+          fill-rule="evenodd"
+          d="M25.5 16v5.333C25.5 22.806 24.38 24 23 24H3C1.62 24 .5 22.806.5 21.333V16H3v5.333h20V16h2.5z"
+          clip-rule="evenodd"
+        ></path>
+        <path
+          fill="#FF2272"
+          fill-rule="evenodd"
+          d="M13.726 13.22l4.04-4.113 1.734 1.766-7 7.127-7-7.127 1.735-1.766 4.038 4.112V0h2.454v13.22z"
+          clip-rule="evenodd"
+        ></path>
+      </svg>
+    </button>
+    <script>
+      var a = document.createElement('a');
+      a.className = "downloadImage";
+
+      var downloadImage = function downloadImage(event) {
+        var image = event.currentTarget.getAttribute('data-image');
+        var extension = image.substring(image.lastIndexOf('.') + 1);
+        a.download = image.substring(image.lastIndexOf('/') + 1);
+        getJSON("".concat("https://www.scoopwhoop.com/", "api/v4/image-base64/?url=").concat(image), function (response) {
+          a.href = "data:image/".concat(extension, ";base64,").concat(response.img_base64);
+          a.click();
+        }); //click event tracking function calling-
+      };
+    </script>
+  </body>
+</html>
