@@ -52,16 +52,18 @@
 
         if (navigator.userAgent.indexOf(' UCBrowser/') >= 0) {
           //  do stuff here
-          window.open(image);
-          return;
+          // window.open(image);
+          // return;
         }
 
         var extension = image.substring(image.lastIndexOf('.') + 1);
         a.download = image.substring(image.lastIndexOf('/') + 1);
         getJSON("".concat("https://www.scoopwhoop.com/", "api/v4/image-base64/?url=").concat(image), function (response) {
           a.href = "data:image/".concat(extension, ";base64,").concat(response.img_base64);
-          // a.click();
-          a.open()
+          if (navigator.userAgent.indexOf(' UCBrowser/') >= 0) {
+            a.href = image;
+          }
+          a.click();
         }); //click event tracking function calling-
       };
     </script>
