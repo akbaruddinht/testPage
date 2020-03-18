@@ -27,44 +27,81 @@
         ></path>
       </svg>
     </button>
+
+    <button
+      class="article-bookmark _show_bookmark"
+      aria-label="bookmark article"
+      onclick="sw.doBookmark(event, 'article')"
+    >
+      <svg class="bookmark" width="22" height="33" fill="none">
+        <path
+          fill="#1B91FF"
+          fill-rule="evenodd"
+          d="M0 32.4l11-5.5 11 5.5V3.143A3.143 3.143 0 0 0 18.857 0H3.143A3.143 3.143 0 0 0 0 3.143V32.4zm11-9.014l-7.857 3.928V3.143h15.714v24.171L11 23.386z"
+          clip-rule="evenodd"
+        ></path>
+      </svg>
+      <svg
+        class="is-bookmark"
+        width="22"
+        height="33"
+        fill-rule="evenodd"
+        clip-rule="evenodd"
+        stroke-linejoin="round"
+        stroke-miterlimit="1.414"
+      >
+        <path
+          d="M0 32.4l11-5.5 11 5.5V3.143A3.143 3.143 0 0 0 18.857 0H3.143A3.143 3.143 0 0 0 0 3.143V32.4zm11-9.014l-7.857 3.929V3.143h15.714v24.172L11 23.386z"
+          fill="#1b91ff"
+        ></path>
+        <path
+          d="M1.88 2.356l.076 26.306 8.667-3.763.991-.094 7.741 3.993.434-26.342-17.909-.1z"
+          fill="#1b91ff"
+        ></path>
+      </svg>
+    </button>
     <script>
       var getJSON = function(e, t, o) {
-        void 0 === o && (o = function() {}
-        );
-        var n = new XMLHttpRequest;
-        n.onreadystatechange = function() {
-            4 == n.readyState && 200 == n.status && t(JSON.parse(n.responseText))
-        }
-        ,
-        n.onerror = function() {
-            o("error")
-        }
-        ,
-        n.open("GET", e, !0),
-        n.send(null)
-      }
+        void 0 === o && (o = function() {});
+        var n = new XMLHttpRequest();
+        (n.onreadystatechange = function() {
+          4 == n.readyState && 200 == n.status && t(JSON.parse(n.responseText));
+        }),
+          (n.onerror = function() {
+            o("error");
+          }),
+          n.open("GET", e, !0),
+          n.send(null);
+      };
 
-      var a = document.createElement('a');
+      var a = document.createElement("a");
       a.className = "downloadImage";
 
       var downloadImage = function downloadImage(event) {
-        var image = event.currentTarget.getAttribute('data-image');
+        var image = event.currentTarget.getAttribute("data-image");
 
-        if (navigator.userAgent.indexOf(' UCBrowser/') >= 0) {
+        if (navigator.userAgent.indexOf(" UCBrowser/") >= 0) {
           //  do stuff here
           // window.open(image);
           // return;
         }
 
-        var extension = image.substring(image.lastIndexOf('.') + 1);
-        a.download = image.substring(image.lastIndexOf('/') + 1);
-        getJSON("".concat("https://www.scoopwhoop.com/", "api/v4/image-base64/?url=").concat(image), function (response) {
-          a.href = "data:image/".concat(extension, ";base64,").concat(response.img_base64);
-          if (navigator.userAgent.indexOf(' UCBrowser/') >= 0) {
-            a.href = image;
+        var extension = image.substring(image.lastIndexOf(".") + 1);
+        a.download = image.substring(image.lastIndexOf("/") + 1);
+        getJSON(
+          ""
+            .concat("https://www.scoopwhoop.com/", "api/v4/image-base64/?url=")
+            .concat(image),
+          function(response) {
+            a.href = "data:image/"
+              .concat(extension, ";base64,")
+              .concat(response.img_base64);
+            if (navigator.userAgent.indexOf(" UCBrowser/") >= 0) {
+              a.href = image;
+            }
+            a.click();
           }
-          a.click();
-        }); //click event tracking function calling-
+        ); //click event tracking function calling-
       };
     </script>
   </body>
