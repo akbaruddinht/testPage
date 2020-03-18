@@ -28,6 +28,22 @@
       </svg>
     </button>
     <script>
+      var getJSON = function(e, t, o) {
+        void 0 === o && (o = function() {}
+        );
+        var n = new XMLHttpRequest;
+        n.onreadystatechange = function() {
+            4 == n.readyState && 200 == n.status && t(JSON.parse(n.responseText))
+        }
+        ,
+        n.onerror = function() {
+            o("error")
+        }
+        ,
+        n.open("GET", e, !0),
+        n.send(null)
+      }
+
       var a = document.createElement('a');
       a.className = "downloadImage";
 
